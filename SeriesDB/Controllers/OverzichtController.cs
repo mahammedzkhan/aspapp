@@ -11,6 +11,7 @@ namespace SeriesDB.Controllers
         // GET: Overzicht
         public ActionResult Index()
         {
+            var SerieContext = new SerieContext();
             return View();
         }
     }
