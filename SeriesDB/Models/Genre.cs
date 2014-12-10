@@ -11,7 +11,7 @@ namespace SeriesDB.Models
             public string Name { get; set; }
 
 
-            public ICollection<Serie> Series { get; set; }
+            public virtual ICollection<Serie> Series { get; set; }
         
     }
 }
