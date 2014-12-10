@@ -19,7 +19,7 @@ namespace SeriesDB.Controllers
         public ActionResult Create()
         {
             var context = new SerieContext();
-            var viewModel = new SerieDB.Models.SerieViewModel();
+            var viewModel = new SerieViewModel();
             viewModel.Genres = new List<SelectListItem>();
             viewModel.Genres.Add(new SelectListItem() { Text = "Selecteer een genre" });
             foreach (var genre in context.Genres)
