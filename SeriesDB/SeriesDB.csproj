@@ -198,6 +198,7 @@
     <Compile Include="Models\SerieContext.cs" />
     <Compile Include="Models\SeriesInitializer.cs" />
     <Compile Include="Models\SerieViewModel.cs" />
+    <Compile Include="Models\SessionModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -273,6 +274,7 @@
     <Content Include="Views\Actors\Edit.cshtml" />
     <Content Include="Views\Actors\Index.cshtml" />
     <Content Include="Views\Actors\Linq.cshtml" />
+    <Content Include="Views\Home\UserSessionSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
