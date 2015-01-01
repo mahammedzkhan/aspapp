@@ -9,8 +9,12 @@ namespace SeriesDB.Models
     public class SerieContext
          : DbContext
     {
+        public SerieContext()
+            : base("SerieContext")
+        {
+        }
         public IDbSet<Genre> Genres { get; set; }
-        public IDbSet<Serie> Series { get; set; }
+        //public IDbSet<Serie> Series { get; set; }
 
 
     }
