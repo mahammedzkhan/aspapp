@@ -126,6 +126,9 @@
   <data name="LogOff" xml:space="preserve">
     <value>Uitloggen</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Registreren</value>
   </data>
