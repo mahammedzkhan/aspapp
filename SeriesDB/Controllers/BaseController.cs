@@ -12,7 +12,7 @@ namespace SeriesDB.Controllers
     {
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
-            string cultureName = null;
+            string cultureName = RouteData.Values["culture"] as string; 
 
             // Attempt to read the culture cookie from Request
             HttpCookie cultureCookie = Request.Cookies["_culture"];
@@ -35,6 +35,7 @@ namespace SeriesDB.Controllers
         {
             // Validate input
             culture = CultureHelper.GetImplementedCulture(culture);
+            RouteData.Values["culture"] = culture;
             // Save culture in a cookie
             HttpCookie cookie = Request.Cookies["_culture"];
             if (cookie != null)
