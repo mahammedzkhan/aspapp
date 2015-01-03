@@ -2,6 +2,7 @@ namespace SeriesDB.Migrations
 {
     using SeriesDB.Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -10,7 +11,7 @@ namespace SeriesDB.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "SeriesDB.Models.SerieContext";
         }
 
@@ -29,16 +30,19 @@ namespace SeriesDB.Migrations
             //    );
             //
 
-            context.Genres.AddOrUpdate(
-                g => g.Name,
-            new Genre { Name="Horror" },
-            new Genre {Name="Sci-Fi"},
-            new Genre {Name="Drama"},
-            new Genre {Name="Thriller"}
+            var genres = new List<Genre>
+            {
+            new Genre{Name="Horror"},
+            new Genre{Name="Sci-Fi"},
+            new Genre{Name="Drama"},
+            new Genre{Name="Thriller"}
 
           
-            );
-            
+            };
+            genres.ForEach(s => context.Genres.Add(s));
+            context.SaveChanges();
+
+
 
         }
     }
