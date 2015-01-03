@@ -120,4 +120,13 @@
   <data name="Edit" xml:space="preserve">
     <value>Bewerken</value>
   </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Uitloggen</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registreren</value>
+  </data>
 </root>

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SeriesDB.Models;
+using SeriesDB.Helpers;
 
 namespace SeriesDB.Controllers
 {
@@ -15,7 +16,13 @@ namespace SeriesDB.Controllers
         private SerieContext db = new SerieContext();
 
         // GET: Genre
+        [HttpGet]
         public ActionResult Index()
+        {
+            return View(db.Genres.ToList());
+        }
+        [HttpPost]
+        public ActionResult Index(Genre ger)
         {
             return View(db.Genres.ToList());
         }
