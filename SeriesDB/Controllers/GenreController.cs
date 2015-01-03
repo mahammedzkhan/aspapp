@@ -10,7 +10,7 @@ using SeriesDB.Models;
 
 namespace SeriesDB.Controllers
 {
-    public class GenreController : Controller
+    public class GenreController : BaseController
     {
         private SerieContext db = new SerieContext();
 

@@ -2,8 +2,39 @@
 
 @{
     ViewBag.Title = "Index";
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
 }
+@helper selected(string c, string culture)
+{
+    if (c == culture)
+    {
+        @:checked="checked"
+    }
+}
+@using (Html.BeginForm("SetCulture", "Home"))
+{
+    <fieldset>
+        <legend>Choose your language</legend>
+        <div class="control-group">
+            <div class="controls">
+                <label for="en-us">
+                    <input name="culture" id="en-us" value="en-us" type="radio" @selected("en-us", culture) /> English
+                </label>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label for="nl">
+                    <input name="culture" id="nl" value="nl" type="radio" @selected("nl", culture) /> Nederlands
+                </label>
+            </div>
+        </div>
 
+    </fieldset>
+
+
+
+}
 <h2>Index</h2>
 
 <p>
@@ -23,7 +54,7 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink(@Resources.Resources.Edit, "Edit", new { id = item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>

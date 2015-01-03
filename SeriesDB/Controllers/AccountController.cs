@@ -13,7 +13,7 @@ using SeriesDB.Models;
 namespace SeriesDB.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private ApplicationUserManager _userManager;
 
