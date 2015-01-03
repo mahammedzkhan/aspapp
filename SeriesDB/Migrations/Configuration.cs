@@ -42,6 +42,19 @@ namespace SeriesDB.Migrations
             genres.ForEach(s => context.Genres.Add(s));
             context.SaveChanges();
 
+            var actors = new List<Actor>
+            {
+            new Actor{FirstName="Matthias", LastName="Schoenaerts", BirthDate=DateTime.Parse("1977-12-08"), Street="Kerkstraat 55", ZipCode="2060", City="Antwerpen"},
+            new Actor{FirstName="Al", LastName="Pacino", BirthDate=DateTime.Parse("1955-12-08"), Street="Zandpoortvest 55", ZipCode="2800", City="Mechelen"},
+            new Actor{FirstName="Matthew", LastName="Fox", BirthDate=DateTime.Parse("1976-05-01"), Street="Grote Markt 55", ZipCode="2800", City="Mechelen"},
+            new Actor{FirstName="John", LastName="Lennon", BirthDate=DateTime.Parse("1987-12-08"), Street="Rue de la gare 55", ZipCode="1000", City="Brussel"}
+
+
+
+          
+            };
+            actors.ForEach(x => context.Actors.Add(x));
+            context.SaveChanges();
 
 
         }
