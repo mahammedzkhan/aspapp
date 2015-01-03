@@ -167,31 +167,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_GlobalResources\LocalizedText.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocalizedText.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\LocalizedText.nl.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocalizedText.nl.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_GlobalResources\LocalizedText1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocalizedText.nl</DependentUpon>
-    </Compile>
-    <Compile Include="App_LocalResources\LocalizedText.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>LocalizedText.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_LocalResources\LocalizedText.nl.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocalizedText.nl.resx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -231,10 +206,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="App_GlobalResources\LocalizedText.nl">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>LocalizedText1.Designer.cs</LastGenOutput>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -304,23 +275,6 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\Index.resx" />
-    <Content Include="App_GlobalResources\LocalizedText.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>LocalizedText.Designer.cs</LastGenOutput>
-    </Content>
-    <Content Include="App_GlobalResources\LocalizedText.nl.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>LocalizedText.nl.designer.cs</LastGenOutput>
-    </Content>
-    <Content Include="App_LocalResources\LocalizedText.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>LocalizedText.Designer.cs</LastGenOutput>
-    </Content>
-    <Content Include="App_LocalResources\LocalizedText.nl.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>LocalizedText.nl.Designer.cs</LastGenOutput>
-    </Content>
     <EmbeddedResource Include="Migrations\201412311022038_InitialCreate.resx">
       <DependentUpon>201412311022038_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
