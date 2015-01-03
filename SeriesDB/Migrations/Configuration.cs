@@ -38,6 +38,7 @@ namespace SeriesDB.Migrations
 
           
             );
+            
 
         }
     }

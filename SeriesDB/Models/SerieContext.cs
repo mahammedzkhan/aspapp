@@ -14,6 +14,7 @@ namespace SeriesDB.Models
         {
         }
         public IDbSet<Genre> Genres { get; set; }
+        public IDbSet<Actor> Actors { get; set; }
         //public IDbSet<Serie> Series { get; set; }
 
 
