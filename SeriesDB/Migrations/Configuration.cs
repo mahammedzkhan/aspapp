@@ -11,7 +11,7 @@ namespace SeriesDB.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             ContextKey = "SeriesDB.Models.SerieContext";
         }
 
@@ -39,7 +39,8 @@ namespace SeriesDB.Migrations
 
           
             };
-            genres.ForEach(s => context.Genres.Add(s));
+            genres.ForEach(s => context.Genres.AddOrUpdate(p => p.Name, s));
+
             context.SaveChanges();
 
             var actors = new List<Actor>
@@ -53,7 +54,7 @@ namespace SeriesDB.Migrations
 
           
             };
-            actors.ForEach(x => context.Actors.Add(x));
+            actors.ForEach(s => context.Actors.AddOrUpdate(p => p.LastName, s));
             context.SaveChanges();
 
 
