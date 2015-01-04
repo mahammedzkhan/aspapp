@@ -31,9 +31,7 @@
         </th>
         <th></th>
     </tr>
-
-    <%-- Sorteer eerst op stad, daarna op voornaam --%>
-    
+    <!-- Sort table by 2 columns -->
     @{
         var modelOrdered = Model.OrderBy(m => m.City + m.FirstName);
     }
@@ -65,7 +63,7 @@
         var a = @Html.DisplayFor(modelItem => item.Street);
         var b = @Html.DisplayFor(modelItem => item.City);
                 }
-
+        <!-- GoogleMaps Integration -->
                 <iframe width="400"
                         height="250"
                         frameborder="0" style="border:0"
