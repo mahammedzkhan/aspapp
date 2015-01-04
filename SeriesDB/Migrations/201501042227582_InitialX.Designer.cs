@@ -7,13 +7,13 @@ namespace SeriesDB.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class InitialX : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialX));
         
         string IMigrationMetadata.Id
         {
-            get { return "201412311022038_InitialCreate"; }
+            get { return "201501042227582_InitialX"; }
         }
         
         string IMigrationMetadata.Source

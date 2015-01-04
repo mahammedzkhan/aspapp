@@ -8,11 +8,10 @@ namespace SeriesDB.Models
     public class Serie
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
 
-        public Genre Genre { get; set; }
-
+        // Foreign Key
         public int GenreId { get; set; }
-
+        public int ActorId { get; set; }
     }
 }
