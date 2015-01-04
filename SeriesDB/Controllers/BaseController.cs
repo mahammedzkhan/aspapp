@@ -10,44 +10,10 @@ namespace SeriesDB.Controllers
 {
     public class BaseController : Controller
     {
-        protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
+        public ActionResult SwitchLanguage(string language)
         {
-            string cultureName = RouteData.Values["culture"] as string; 
-
-            // Attempt to read the culture cookie from Request
-            HttpCookie cultureCookie = Request.Cookies["_culture"];
-            if (cultureCookie != null)
-                cultureName = cultureCookie.Value;
-            else
-                cultureName = Request.UserLanguages != null && Request.UserLanguages.Length > 0 ?
-                        Request.UserLanguages[0] :  // obtain it from HTTP header AcceptLanguages
-                        null;
-            // Validate culture name
-            cultureName = CultureHelper.GetImplementedCulture(cultureName); // This is safe
-
-            // Modify current thread's cultures            
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
-            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
-
-            return base.BeginExecuteCore(callback, state);
-        }
-        public ActionResult SetCulture(string culture)
-        {
-            // Validate input
-            culture = CultureHelper.GetImplementedCulture(culture);
-            RouteData.Values["culture"] = culture;
-            // Save culture in a cookie
-            HttpCookie cookie = Request.Cookies["_culture"];
-            if (cookie != null)
-                cookie.Value = culture;   // update cookie value
-            else
-            {
-                cookie = new HttpCookie("_culture");
-                cookie.Value = culture;
-                cookie.Expires = DateTime.Now.AddYears(1);
-            }
-            Response.Cookies.Add(cookie);
+            Session.Add("taal", language);
             return RedirectToAction("Index");
-        } 
+        }
     }
 }
