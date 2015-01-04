@@ -52,7 +52,7 @@ namespace SeriesDB.Controllers
         public ActionResult PrintIndex()
         {
             //Code to get content
-            return new Rotativa.ActionAsPdf("Index") { FileName = "TestActionAsPdf.pdf" };
+            return new Rotativa.ActionAsPdf("Index") { FileName = "TestActionAsPdf.pdf", CustomSwitches = "--print-media-type" };
         }
         // GET: Actors/Details/5
         public ActionResult Details(int? id)
