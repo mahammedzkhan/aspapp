@@ -32,7 +32,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
@@ -50,7 +51,20 @@
             @Html.DisplayFor(modelItem => item.ZipCode)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.City)
+           @Html.DisplayFor(modelItem => item.City)
+         </td>
+          <td>  
+              
+              @{
+                    var a = @Html.DisplayFor(modelItem => item.Street);
+                  var b = @Html.DisplayFor(modelItem => item.City);
+}
+              
+              <iframe width="400"
+                    height="250"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAEX-R67Htcq1ASM8AEO0qG5x3pc0cHhqQ
+                    &q=@b,@a"></iframe>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
