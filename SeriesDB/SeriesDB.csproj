@@ -180,7 +180,6 @@
     <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\SerieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -272,11 +271,6 @@
     <Content Include="Views\Actors\Details.cshtml" />
     <Content Include="Views\Actors\Edit.cshtml" />
     <Content Include="Views\Actors\Index.cshtml" />
-    <Content Include="Views\Serie\Create.cshtml" />
-    <Content Include="Views\Serie\Delete.cshtml" />
-    <Content Include="Views\Serie\Details.cshtml" />
-    <Content Include="Views\Serie\Edit.cshtml" />
-    <Content Include="Views\Serie\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
