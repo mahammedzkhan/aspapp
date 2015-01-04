@@ -9,10 +9,20 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.ActionLink("FirstName", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.LastName)
@@ -27,16 +37,13 @@
             @Html.DisplayNameFor(model => model.ZipCode)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.City)
+            @Html.ActionLink("City", "Index", new { sortOrder = ViewBag.DateSortParm })
         </th>
-        <th></th>
-    </tr>
-    <!-- Sort table by 2 columns -->
-    @{
-        var modelOrdered = Model.OrderBy(m => m.City + m.FirstName);
-    }
+    <tr>
 
-    @foreach (var item in modelOrdered)
+
+
+    @foreach (var item in Model)
     {
         <tr>
             <td>

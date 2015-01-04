@@ -16,10 +16,37 @@ namespace SeriesDB.Controllers
     {
         private SerieContext db = new SerieContext();
 
+
+       
+        
         // GET: Actors
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
-            return View(db.Actors.ToList());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "City" ? "city_desc" : "City";
+            var actors = from a in db.Actors
+                         select a;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                actors = actors.Where(a => a.FirstName.Contains(searchString)
+                                       || a.LastName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    actors = actors.OrderByDescending(a => a.FirstName);
+                    break;
+                case "City":
+                    actors = actors.OrderBy(a => a.City);
+                    break;
+                case "city_desc":
+                    actors = actors.OrderByDescending(s => s.City);
+                    break;
+                default:
+                    actors = actors.OrderBy(a => a.FirstName);
+                    break;
+            }
+            return View(actors.ToList());
         }
         // GET: Actors/Details/5
         public ActionResult Details(int? id)
