@@ -18,12 +18,17 @@ namespace SeriesDB.Controllers
        
         
         // GET: Actors
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder, string searchString)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "City" ? "city_desc" : "City";
             var actors = from a in db.Actors
                          select a;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                actors = actors.Where(a => a.FirstName.Contains(searchString)
+                                       || a.LastName.Contains(searchString));
+            }
             switch (sortOrder)
             {
                 case "name_desc":
