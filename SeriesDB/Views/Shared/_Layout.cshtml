@@ -54,10 +54,14 @@
                     <li>@Html.ActionLink("Linq", "Linq", "Actors")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
+                
             </div>
         </div>
     </div>
     <div class="container body-content">
+        @Html.ActionLink("NL", "SwitchLanguage", new { language = "nl" })
+        @Html.ActionLink("FR", "SwitchLanguage", new { language = "fr" })
+        @Html.ActionLink("EN", "SwitchLanguage", new { language = "en" })
         @RenderBody()
         <hr />
         <footer>

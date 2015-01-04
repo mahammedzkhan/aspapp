@@ -1,40 +1,8 @@
 ﻿@model IEnumerable<SeriesDB.Models.Genre>
-
 @{
     ViewBag.Title = "Index";
-    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
 }
-@helper selected(string c, string culture)
-{
-    if (c == culture)
-    {
-        @:checked="checked"
-    }
-}
-@using (Html.BeginForm("SetCulture", "Genre/Index"))
-{
-    <fieldset>
-        <legend>Choose your language</legend>
-        <div class="control-group">
-            <div class="controls">
-                <label for="en-us">
-                    <input name="culture" id="en-us" value="en-us" type="radio" @selected("en-us", culture) /> English
-                </label>
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <label for="nl">
-                    <input name="culture" id="nl" value="nl" type="radio" @selected("nl", culture) /> Nederlands
-                </label>
-            </div>
-        </div>
 
-    </fieldset>
-
-
-
-}
 <h2>Index</h2>
 
 <p>
@@ -54,22 +22,13 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink(@Resources.Resources.Edit, "Edit", new { id = item.Id }) |
+            @Html.ActionLink(@LocalizedValues.Edit, "Edit", new { id = item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink(@LocalizedValues.Delete, "Delete", new { id = item.Id })
+            
+            
         </td>
     </tr>
 }
 
 </table>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script type="text/javascript">
-        (function ($) {
-            $("input[type = 'radio']").click(function () {
-                $(this).parents("form").submit(); // post form
-            });
-
-        })(jQuery);
-    </script>
-}

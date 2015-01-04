@@ -13,7 +13,8 @@ using Rotativa;
 
 namespace SeriesDB.Controllers
 {
-    public class ActorsController : Controller
+    public class ActorsController : BaseController
+
     {
         private SerieContext db = new SerieContext();
 
