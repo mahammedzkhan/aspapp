@@ -1,0 +1,15 @@
+﻿@media print {
+    .navbar .navbar-inverse .navbar-fixed-top{
+        display:none;
+    }
+    iframe{
+        display:none;
+        overflow:hidden;
+    }
+    form {
+        display: none;
+    }
+    tr td:last-child{
+        display:none;
+    }
+}
