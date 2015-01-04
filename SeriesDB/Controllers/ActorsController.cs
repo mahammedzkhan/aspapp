@@ -38,10 +38,10 @@ namespace SeriesDB.Controllers
             return View(actor);
         }
 
-        public ActionResult Fox()
+        public ActionResult Linq()
         {
             var query = from p in db.Actors
-            where p.LastName == "Fox"
+            where p.LastName.Contains("a")
                         select new { FirstName = p.FirstName, LastName = p.LastName, BirthDate = p.BirthDate };
             var actors = query.ToList().Select(r => new Actor
              {
