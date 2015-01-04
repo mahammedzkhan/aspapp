@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using SeriesDB.Models;
 using System.Diagnostics;
+using Rotativa;
 
 
 namespace SeriesDB.Controllers
@@ -47,6 +48,11 @@ namespace SeriesDB.Controllers
                     break;
             }
             return View(actors.ToList());
+        }
+        public ActionResult PrintIndex()
+        {
+            //Code to get content
+            return new Rotativa.ActionAsPdf("Index") { FileName = "TestActionAsPdf.pdf" };
         }
         // GET: Actors/Details/5
         public ActionResult Details(int? id)
