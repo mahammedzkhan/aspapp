@@ -272,6 +272,7 @@
     <Content Include="Views\Actors\Details.cshtml" />
     <Content Include="Views\Actors\Edit.cshtml" />
     <Content Include="Views\Actors\Index.cshtml" />
+    <Content Include="Views\Actors\Linq.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

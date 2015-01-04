@@ -1,0 +1,23 @@
+﻿@model IEnumerable<SeriesDB.Models.Actor>
+
+
+@{
+    WebGrid grid = new WebGrid(Model); 
+}
+
+
+
+
+
+
+
+<h2>View</h2>
+
+<div>
+    <h4>LINQ Grid: Actors having 'a' in their lastnames</h4>
+    <hr />
+    <div>
+        @grid.GetHtml()
+    </div>
+
+</div>

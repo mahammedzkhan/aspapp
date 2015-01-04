@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SeriesDB.Models;
+using System.Diagnostics;
+
 
 namespace SeriesDB.Controllers
 {
@@ -19,7 +21,6 @@ namespace SeriesDB.Controllers
         {
             return View(db.Actors.ToList());
         }
-
         // GET: Actors/Details/5
         public ActionResult Details(int? id)
         {
@@ -28,11 +29,29 @@ namespace SeriesDB.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Actor actor = db.Actors.Find(id);
+            
+
             if (actor == null)
             {
                 return HttpNotFound();
             }
             return View(actor);
+        }
+
+        public ActionResult Linq()
+        {
+            var query = from p in db.Actors
+            where p.LastName.Contains("a")
+                        select new { FirstName = p.FirstName, LastName = p.LastName, BirthDate = p.BirthDate };
+            var actors = query.ToList().Select(r => new Actor
+             {
+                FirstName = r.FirstName,
+                LastName = r.LastName,
+                BirthDate = r.BirthDate
+             }).ToList();
+            
+
+    return View(actors);
         }
 
         // GET: Actors/Create
