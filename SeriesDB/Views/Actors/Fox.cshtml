@@ -2,31 +2,17 @@
 
 
 @{
-    ViewBag.Title = "Fox";
+    WebGrid grid = new WebGrid(Model); 
 }
+
 
 <h2>View</h2>
 
 <div>
     <h4>Actor</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+    <div>
+        @grid.GetHtml()
+    </div>
 
-
-    </dl>
-    @foreach (var item in Model)
-    {
-        <p>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </p>
-    <p>
-        @Html.DisplayFor(modelItem => item.LastName)
-    </p>
-    }
 </div>
